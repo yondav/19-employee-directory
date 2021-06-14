@@ -11,10 +11,7 @@ const Employee = ({
   id: { value },
 }) => {
   return (
-    <article
-      key={value}
-      className='card col-12 col-md-6 col-lg-4 col-xl-3 p-4 employee-card'
-    >
+    <article key={value} className='card p-4 employee-card'>
       <img
         src={large}
         alt={`${first} ${last}`}
@@ -24,22 +21,26 @@ const Employee = ({
         <div className='row'>
           <div className='col d-flex flex-column align-items-center text-center'>
             <h1>{`${first} ${last}`}</h1>
-            <h5>{`${city}, ${state}, ${country}`}</h5>
+            <h2>{`${city}, ${state}, ${country}`}</h2>
           </div>
         </div>
         <hr />
-        <div className='row d-flex justify-content-center '>
-          <div className='col-3 d-flex flex-column align-items-end'>
-            <h6>Email:</h6>
-            <h6>Phone:</h6>
-            <h6>Hired:</h6>
+        <div className='row d-flex justify-content-center m-0'>
+          <div className='col-3 col-md-2 d-flex flex-column align-items-end'>
+            <p>Email:</p>
+            <p>Phone:</p>
+            <p>Hired:</p>
           </div>
-          <div className='col-6 col-md-8 col-lg-9 d-flex flex-column align-items-start'>
-            <h6>{email}</h6>
-            <h6>{cell}</h6>
-            <h6>{`${new Date(date).getMonth() + 1}/${new Date(
+          <div className='col-6 col-md-10 col-lg-10 d-flex flex-column align-items-start'>
+            <p>
+              <a href={`mailto:${email}`}>{email}</a>
+            </p>
+            <p>
+              <a href={`tel:+${cell}`}>{cell}</a>
+            </p>
+            <p>{`${new Date(date).getMonth() + 1}/${new Date(
               date
-            ).getDate()}/${new Date(date).getFullYear()}`}</h6>
+            ).getDate()}/${new Date(date).getFullYear()}`}</p>
           </div>
         </div>
       </div>

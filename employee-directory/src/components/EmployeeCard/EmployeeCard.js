@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import Employee from '../Employee/Employee';
 import API from '../../utils/API';
-import './employee-card.css';
-
 class EmployeeCard extends Component {
   state = {
     employees: [],
@@ -19,16 +17,18 @@ class EmployeeCard extends Component {
 
   render() {
     return (
-      <>
+      <div className='row d-flex justify-content-center card-row'>
         {this.state.employees.map((employee) => {
           return (
-            <Employee
+            <div
+              className='col-sm-12 col-md-6 col-lg-4'
               key={employee.login.uuid}
-              {...employee}
-            ></Employee>
+            >
+              <Employee {...employee}></Employee>
+            </div>
           );
         })}
-      </>
+      </div>
     );
   }
 }

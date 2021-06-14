@@ -6,9 +6,7 @@ function App() {
   return (
     <>
       <main className='container p-4'>
-        <div className='row'>
-          <EmployeeCard />
-        </div>
+        <EmployeeCard />
       </main>
     </>
   );
