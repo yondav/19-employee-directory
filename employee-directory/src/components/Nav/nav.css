@@ -1,0 +1,10 @@
+nav {
+  padding: 0.8rem;
+  width: 100vw;
+  background-color: rgba(35, 50, 70, 0.486);
+  box-shadow: rgba(27, 16, 23, 0.09) 5.25px 3.25px 12.6px;
+}
+
+nav li {
+  margin-left: 0.5rem;
+}

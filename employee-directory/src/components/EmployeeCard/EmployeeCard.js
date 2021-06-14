@@ -18,16 +18,14 @@ class EmployeeCard extends Component {
   render() {
     return (
       <div className='row d-flex justify-content-center card-row'>
-        {this.state.employees.map((employee) => {
-          return (
-            <div
-              className='col-sm-12 col-md-6 col-lg-4'
-              key={employee.login.uuid}
-            >
-              <Employee {...employee}></Employee>
-            </div>
-          );
-        })}
+        {this.state.employees.map((employee) => (
+          <div
+            className='col-sm-12 col-md-6 col-lg-4'
+            key={employee.login.uuid}
+          >
+            <Employee {...employee}></Employee>
+          </div>
+        ))}
       </div>
     );
   }

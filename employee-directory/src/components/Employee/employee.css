@@ -1,5 +1,5 @@
 .employee-card {
-  margin: 0.5rem 0;
+  margin: 1rem 0;
   border: none;
   border-radius: 1.5rem;
   box-shadow: rgba(27, 16, 23, 0.09) 5.25px 3.25px 12.6px;
@@ -13,6 +13,7 @@
   text-decoration: none;
   color: rgb(143, 68, 7);
   transition: 0.3s ease-in-out;
+  word-wrap: break-word;
 }
 
 .employee-card a:hover,
@@ -22,10 +23,6 @@
 }
 
 @media screen and (min-width: 768px) {
-  .employee-card {
-    margin: 0.5rem;
-  }
-
   .employee-card h1 {
     font-size: 1.5em;
   }
@@ -38,7 +35,6 @@
 @media screen and (min-width: 990px) {
   .employee-card {
     width: 100%;
-    margin: 0.5 0 !important;
   }
 
   .employee-card p {
