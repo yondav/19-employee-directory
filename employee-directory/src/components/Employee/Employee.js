@@ -20,7 +20,8 @@ const Employee = ({
       <div className='row'>
         <div className='col d-flex flex-column align-items-center text-center'>
           <h1>{`${first} ${last}`}</h1>
-          <h2>{`${city}, ${state}, ${country}`}</h2>
+          <h2>{city}</h2>
+          <h2>{`${state}, ${country}`}</h2>
         </div>
       </div>
       <hr />

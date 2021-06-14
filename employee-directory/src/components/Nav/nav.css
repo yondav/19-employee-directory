@@ -8,3 +8,7 @@ nav {
 nav li {
   margin-left: 0.5rem;
 }
+
+.dropdown-menu {
+  background-color: #f1f5f8;
+}
