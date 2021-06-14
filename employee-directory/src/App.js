@@ -1,23 +1,13 @@
 import React from 'react';
 import './App.css';
-import Employee from './components/Employee/Employee';
-
-// test employee object
-import { employees } from './employees';
+import EmployeeCard from './components/EmployeeCard/EmployeeCard';
 
 function App() {
   return (
     <>
       <main className='container p-4'>
         <div className='row'>
-          {employees.map((employee) => {
-            return (
-              <Employee
-                key={employee.id.value}
-                {...employee}
-              ></Employee>
-            );
-          })}
+          <EmployeeCard />
         </div>
       </main>
     </>
