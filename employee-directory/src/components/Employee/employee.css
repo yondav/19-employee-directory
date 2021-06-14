@@ -1,0 +1,17 @@
+.employee-card {
+  margin: 0.5rem 0;
+  border: none;
+  border-radius: 1.5rem;
+  box-shadow: rgba(27, 16, 23, 0.09) 5.25px 3.25px 12.6px;
+}
+
+.employee-card img {
+  /* border: 10px solid rgb(49, 79, 144); */
+  border-radius: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .employee-card {
+    margin: 0.5rem;
+  }
+}
