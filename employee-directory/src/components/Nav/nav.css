@@ -9,6 +9,13 @@ nav li {
   margin-left: 0.5rem;
 }
 
+.filter-btn:hover,
+.filter-btn:focus,
+.filter-btn:active {
+  background-color: #c2d7e7;
+  border: none;
+}
+
 .dropdown-menu {
   background-color: #f1f5f8;
 }

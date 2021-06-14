@@ -23,7 +23,10 @@ class Nav extends Component {
         <ul className='nav nav-pills d-flex justify-content-end'>
           <li className='nav-item dropdown'>
             <div className='btn-group'>
-              <button type='button' className='btn btn-light'>
+              <button
+                type='button'
+                className='btn btn-light filter-btn'
+              >
                 Sort By Name
               </button>
             </div>
@@ -32,7 +35,7 @@ class Nav extends Component {
             <div className='btn-group dropright'>
               <button
                 type='button'
-                className='btn btn-light dropdown-toggle'
+                className='btn btn-light dropdown-toggle filter-btn'
                 data-toggle='dropdown'
                 aria-haspopup='true'
                 aria-expanded='false'
