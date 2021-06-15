@@ -22,13 +22,12 @@ class DataIntake extends Component {
     this.setState({
       ...this.state,
       filteredEmployees: this.state.employees.sort((a, b) => {
-        return a.registered.age - b.registered.age;
+        return (
+          new Date(a.registered.date).getTime() -
+          new Date(b.registered.date).getTime()
+        );
       }),
     });
-    // const sortedEmployees = this.state.employees.sort((a, b) => {
-    //   return a.registered.date - b.registered.date;
-    // });
-    // this.setState({ sortedEmployees });
   };
 
   componentDidMount() {
@@ -53,6 +52,7 @@ class DataIntake extends Component {
         <Header
           countries={this.state.countries}
           handleCountryChange={this.handleCountryChange}
+          handleGenderFilter={this.handleGenderFilter}
           sortDateHired={this.sortDateHired}
         ></Header>
         <EmployeeCard

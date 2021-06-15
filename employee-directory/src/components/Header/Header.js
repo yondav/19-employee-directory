@@ -2,18 +2,15 @@ import React from 'react';
 import Nav from '../Nav/Nav';
 import './header.css';
 
-const Header = ({
-  countries,
-  handleCountryChange,
-  sortDateHired,
-}) => {
+const Header = (props) => {
   return (
     <header className='d-flex flex-column justify-content-center align-items-center'>
       <h1 className='p-5'>Employees</h1>
       <Nav
-        countries={countries}
-        handleCountryChange={handleCountryChange}
-        sortDateHired={sortDateHired}
+        countries={props.countries}
+        handleCountryChange={props.handleCountryChange}
+        handleGenderFilter={props.handleGenderFilter}
+        sortDateHired={props.sortDateHired}
       ></Nav>
     </header>
   );

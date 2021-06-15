@@ -2,15 +2,15 @@ import React, { useCallback } from 'react';
 import FilterItem from '../FilterItem/FilterItem';
 import './nav.css';
 
-const Nav = ({ countries, handleCountryChange, sortDateHired }) => {
+const Nav = (props) => {
   const handleFilterChange = useCallback((country) => {
     console.log(country);
-    handleCountryChange(country);
+    props.handleCountryChange(country);
   }, []);
 
   const handleSort = useCallback((date) => {
     console.log(date);
-    sortDateHired();
+    props.sortDateHired();
   }, []);
 
   return (
@@ -40,7 +40,7 @@ const Nav = ({ countries, handleCountryChange, sortDateHired }) => {
             </button>
             <div className='dropdown-menu'>
               <div className='d-flex flex-column'>
-                {countries.map((country) => (
+                {props.countries.map((country) => (
                   <FilterItem
                     key={country}
                     country={country}
