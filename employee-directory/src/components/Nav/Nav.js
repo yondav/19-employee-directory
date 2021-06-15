@@ -51,6 +51,30 @@ const Nav = (props) => {
             </div>
           </div>
         </li>
+        <li className='nav-item dropdown'>
+          <div className='btn-group dropright'>
+            <button
+              type='button'
+              className='btn btn-light dropdown-toggle filter-btn'
+              data-toggle='dropdown'
+              aria-haspopup='true'
+              aria-expanded='false'
+            >
+              Filter By Gender
+            </button>
+            <div className='dropdown-menu'>
+              <div className='d-flex flex-column'>
+                {props.genders.map((gender) => (
+                  <FilterItem
+                    key={gender}
+                    gender={gender}
+                    handleFilterChange={handleFilterChange}
+                  ></FilterItem>
+                ))}
+              </div>
+            </div>
+          </div>
+        </li>
       </ul>
     </nav>
   );

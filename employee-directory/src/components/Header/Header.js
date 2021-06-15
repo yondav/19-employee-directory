@@ -8,6 +8,7 @@ const Header = (props) => {
       <h1 className='p-5'>Employees</h1>
       <Nav
         countries={props.countries}
+        genders={props.genders}
         handleCountryChange={props.handleCountryChange}
         handleGenderFilter={props.handleGenderFilter}
         sortDateHired={props.sortDateHired}

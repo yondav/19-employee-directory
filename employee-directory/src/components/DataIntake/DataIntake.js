@@ -7,6 +7,7 @@ class DataIntake extends Component {
     employees: [],
     filteredEmployees: [],
     countries: [],
+    genders: [],
   };
 
   handleCountryChange = (country) => {
@@ -42,6 +43,11 @@ class DataIntake extends Component {
             )
           ),
         ],
+        genders: [
+          ...new Set(
+            results.data.results.map((gender) => gender.gender)
+          ),
+        ],
       });
     });
   }
@@ -51,6 +57,7 @@ class DataIntake extends Component {
       <>
         <Header
           countries={this.state.countries}
+          genders={this.state.genders}
           handleCountryChange={this.handleCountryChange}
           handleGenderFilter={this.handleGenderFilter}
           sortDateHired={this.sortDateHired}
