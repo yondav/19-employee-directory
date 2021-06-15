@@ -19,6 +19,15 @@ class DataIntake extends Component {
     });
   };
 
+  handleGenderFilter = (gender) => {
+    this.setState({
+      ...this.state,
+      filteredEmployees: this.state.employees.filter(
+        (employee) => employee.gender === gender
+      ),
+    });
+  };
+
   sortDateHired = () => {
     this.setState({
       ...this.state,

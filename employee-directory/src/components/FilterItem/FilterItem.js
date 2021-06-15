@@ -1,15 +1,15 @@
 import React from 'react';
 import './filter-item.css';
 
-const FilterItem = ({ country, handleFilterChange }) => (
+const FilterItem = ({ option, handleFilterChange }) => (
   <button
     type='button'
     className='btn btn-light filter-btn'
     onClick={() => {
-      handleFilterChange(country);
+      handleFilterChange(option);
     }}
   >
-    {country}
+    {option}
   </button>
 );
 

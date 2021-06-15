@@ -3,15 +3,37 @@ import FilterItem from '../FilterItem/FilterItem';
 import './nav.css';
 
 const Nav = (props) => {
-  const handleFilterChange = useCallback((country) => {
-    console.log(country);
-    props.handleCountryChange(country);
-  }, []);
+  let {
+    countries,
+    genders,
+    handleCountryChange,
+    handleGenderFilter,
+    sortDateHired,
+  } = props;
 
-  const handleSort = useCallback((date) => {
-    console.log(date);
-    props.sortDateHired();
-  }, []);
+  const handleCountryFilterChange = useCallback(
+    (country) => {
+      console.log(country);
+      handleCountryChange(country);
+    },
+    [handleCountryChange]
+  );
+
+  const handleGenderFilterChange = useCallback(
+    (gender) => {
+      console.log(gender);
+      handleGenderFilter(gender);
+    },
+    [handleGenderFilter]
+  );
+
+  const handleSort = useCallback(
+    (date) => {
+      console.log(date);
+      sortDateHired();
+    },
+    [sortDateHired]
+  );
 
   return (
     <nav>
@@ -40,11 +62,11 @@ const Nav = (props) => {
             </button>
             <div className='dropdown-menu'>
               <div className='d-flex flex-column'>
-                {props.countries.map((country) => (
+                {countries.map((country) => (
                   <FilterItem
                     key={country}
-                    country={country}
-                    handleFilterChange={handleFilterChange}
+                    option={country}
+                    handleFilterChange={handleCountryFilterChange}
                   ></FilterItem>
                 ))}
               </div>
@@ -64,11 +86,11 @@ const Nav = (props) => {
             </button>
             <div className='dropdown-menu'>
               <div className='d-flex flex-column'>
-                {props.genders.map((gender) => (
+                {genders.map((gender) => (
                   <FilterItem
                     key={gender}
-                    gender={gender}
-                    handleFilterChange={handleFilterChange}
+                    option={gender}
+                    handleFilterChange={handleGenderFilterChange}
                   ></FilterItem>
                 ))}
               </div>
