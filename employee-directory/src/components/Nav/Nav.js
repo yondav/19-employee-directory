@@ -8,10 +8,10 @@ const Nav = ({ countries, handleCountryChange, sortDateHired }) => {
     handleCountryChange(country);
   }, []);
 
-  const handleSort = () => {
-    console.log('howdy');
-    return sortDateHired();
-  };
+  const handleSort = useCallback((date) => {
+    console.log(date);
+    sortDateHired();
+  }, []);
 
   return (
     <nav>
@@ -21,6 +21,7 @@ const Nav = ({ countries, handleCountryChange, sortDateHired }) => {
             <button
               type='button'
               className='btn btn-light filter-btn'
+              onClick={handleSort}
             >
               Sort By Date Hired
             </button>
@@ -34,7 +35,6 @@ const Nav = ({ countries, handleCountryChange, sortDateHired }) => {
               data-toggle='dropdown'
               aria-haspopup='true'
               aria-expanded='false'
-              onClick={handleSort}
             >
               Filter By Country
             </button>

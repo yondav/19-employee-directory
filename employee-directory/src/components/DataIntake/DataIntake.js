@@ -21,9 +21,9 @@ class DataIntake extends Component {
   sortDateHired = () => {
     this.setState({
       ...this.state,
-      filteredEmployees: this.state.employees.sort(
-        (a, b) => a.registered.date - b.registered.date
-      ),
+      filteredEmployees: this.state.employees.sort((a, b) => {
+        return a.registered.age - b.registered.age;
+      }),
     });
     // const sortedEmployees = this.state.employees.sort((a, b) => {
     //   return a.registered.date - b.registered.date;
