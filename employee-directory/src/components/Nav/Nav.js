@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import FilterItem from '../FilterItem/FilterItem';
 import './nav.css';
 
-const Nav = ({ countries }) => {
+const Nav = ({ countries, handleCountryChange }) => {
+  const handleFilterChange = useCallback((country) => {
+    console.log(country);
+    handleCountryChange(country);
+  }, []);
   return (
     <nav>
       <ul className='nav nav-pills d-flex justify-content-end'>
@@ -30,7 +34,11 @@ const Nav = ({ countries }) => {
             <div className='dropdown-menu'>
               <div className='d-flex flex-column'>
                 {countries.map((country) => (
-                  <FilterItem country={country.location}></FilterItem>
+                  <FilterItem
+                    key={country}
+                    country={country}
+                    handleFilterChange={handleFilterChange}
+                  ></FilterItem>
                 ))}
               </div>
             </div>
