@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import Employee from '../Employee/Employee';
 
 const EmployeeCard = ({ employees }) => {

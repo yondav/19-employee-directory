@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import EmployeeCard from '../EmployeeCard/EmployeeCard';
 import API from '../../utils/API';
 import Header from '../Header/Header';
-import Nav from '../Nav/Nav';
-
 class DataIntake extends Component {
   state = {
     employees: [],
@@ -18,6 +16,19 @@ class DataIntake extends Component {
         (employee) => employee.location.country === country
       ),
     });
+  };
+
+  sortDateHired = () => {
+    this.setState({
+      ...this.state,
+      filteredEmployees: this.state.employees.sort(
+        (a, b) => a.registered.date - b.registered.date
+      ),
+    });
+    // const sortedEmployees = this.state.employees.sort((a, b) => {
+    //   return a.registered.date - b.registered.date;
+    // });
+    // this.setState({ sortedEmployees });
   };
 
   componentDidMount() {
@@ -39,14 +50,13 @@ class DataIntake extends Component {
   render() {
     return (
       <>
-        <Header />
-        <Nav
+        <Header
           countries={this.state.countries}
           handleCountryChange={this.handleCountryChange}
-        ></Nav>
+          sortDateHired={this.sortDateHired}
+        ></Header>
         <EmployeeCard
           employees={this.state.filteredEmployees}
-          // filtered={this.state.filteredEmployees}
         ></EmployeeCard>
       </>
     );

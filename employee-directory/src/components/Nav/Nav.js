@@ -2,11 +2,17 @@ import React, { useCallback } from 'react';
 import FilterItem from '../FilterItem/FilterItem';
 import './nav.css';
 
-const Nav = ({ countries, handleCountryChange }) => {
+const Nav = ({ countries, handleCountryChange, sortDateHired }) => {
   const handleFilterChange = useCallback((country) => {
     console.log(country);
     handleCountryChange(country);
   }, []);
+
+  const handleSort = () => {
+    console.log('howdy');
+    return sortDateHired();
+  };
+
   return (
     <nav>
       <ul className='nav nav-pills d-flex justify-content-end'>
@@ -16,7 +22,7 @@ const Nav = ({ countries, handleCountryChange }) => {
               type='button'
               className='btn btn-light filter-btn'
             >
-              Sort By Name
+              Sort By Date Hired
             </button>
           </div>
         </li>
@@ -28,6 +34,7 @@ const Nav = ({ countries, handleCountryChange }) => {
               data-toggle='dropdown'
               aria-haspopup='true'
               aria-expanded='false'
+              onClick={handleSort}
             >
               Filter By Country
             </button>
